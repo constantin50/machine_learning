@@ -1,9 +1,10 @@
-# Closed domain Q&A system
+# Context-based Closed Domain Q&A System
 
 ## Overview
 
 Question answering system is a systems that automatically answer questions posed by humans in a natural language. Closed-domain 
 question answering deals with questions under a specific domain. The system of this project handles domain of mathematics. 
+Context-based means that system is only able to exract an answer from some context related to the entity presented in the question.  
 
 ## Architecture
 
