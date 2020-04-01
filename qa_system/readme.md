@@ -23,11 +23,11 @@ begins and ends in the given context.
 
 Prerequisites: the following libraries should be installed: deeppavlov, tensorflow, wikipeadiaapi, nltk, spellchecker 
 
-## Google Colab
+### Google Colab
 just run qa_system.ipynb
 
-## Local host
-
+### Local host
+Install 
 
 
 
