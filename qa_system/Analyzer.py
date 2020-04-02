@@ -4,6 +4,7 @@ import wikipediaapi
 from nltk.stem import WordNetLemmatizer
 from spellchecker import SpellChecker
 
+# this class handles text data: lemmatization, tagging and correction of spelling.
 class Analyzer:
 
   """
@@ -62,14 +63,19 @@ class Analyzer:
        list of lemmatized, tagged and correctly spelled words
 
 	"""
-    aux_verbs = ["am", "is", "are", "was", "were", "will", "did", "does", "shall"]
+    aux_verbs = ["am", "is", "are", "was", "were", "will", "did", "doe", "shall"]
+    math_consts = ["π", "pi", "e"]
     exp = nltk.word_tokenize(exp)
     for i in range(len(exp)): 
       if (exp[i] != "was" or exp[i] != "does"):
 	      exp[i] = self.lemmatizer.lemmatize(exp[i])
     exp = self.correct_spelling(exp)
     result = pos_tag(exp)
-    print(exp)
+    for i in range(len(result)):
+      if (result[i][0] in math_consts): 
+        result[i] = list(result[i])
+        result[i][1] = "NN"
+
     if (deter==True):
       _result = []
       for w in result:
@@ -83,20 +89,20 @@ class Analyzer:
 
 
   def correct_spelling(self, exp):
-  	"""
-	Parameters
-	-----------
-	exp : string
-	   expression to correct
+    """
+    Parameters
+    -----------
+    exp : string
+      expression to correct
 
-	Returns
-	--------
-	result : list
-       list of corrected words
+    Returns
+    --------
+    result : list
+        list of corrected words
 
-	"""
-    corrected = []
+	  """
     misspelled = self.spell.unknown(exp)
+    corrected = []
     corrected_words = [word for word in misspelled]
     for i in range(len(exp)):
       if (exp[i] not in misspelled):
@@ -105,5 +111,3 @@ class Analyzer:
         corrected.append(self.spell.correction(exp[i]))
         print("did you mean: ", self.spell.correction(exp[i]))
     return corrected;
-
-    
