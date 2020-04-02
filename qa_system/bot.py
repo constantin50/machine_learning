@@ -3,24 +3,13 @@ import Analyzer
 from deeppavlov import build_model, configs
 
 class Bot:
-  """
-  Attributes:
-  -----------
 
-  base : wrapper for Wikipedia API
-    returns wiki-pages
-
-  model : bert model for Q&A
-
-  analyzer : class for handling text data 
-
-  """
   def __init__(self):
-    self.base = wikipediaapi.Wikipedia('en')
+    self.knw_base = wikipediaapi.Wikipedia('en')
     self.model = build_model(configs.squad.squad_bert, download=True)
     self.analyzer = Analyzer()
     
-
+  # takes user's input
   def take_query(self):
     """
     Attributes
@@ -38,7 +27,7 @@ class Bot:
     cntxt : list
       wiki-pages 
 
-    """
+    """  
     query = input("query: ")
     qtns = self.exract_questions(query)
     qtns = self.solve_anaphora(qtns)
@@ -47,12 +36,12 @@ class Bot:
     self.response(qtns, cntxt, ents)
   
   def response(self, qtns, contxts, ents):
+
     for i in range(len(contxts)):
         contxt = ' ';
         for j in range(len(contxts[i])):
-          contxt += re.sub(r'\n|  |\{[^)]*\}|\\|\([^)]*\)|\S*\)|\S*\}', '',contxts[i][j].summary)
+          contxt += ' '+re.sub(r'\n|  |\{[^)]*\}|\\|\([^)]*\)|\S*\)|\S*\}', '',contxts[i][j].summary)
         answer = self.model([contxt], [qtns[i]])
-        print("CONTEXT:", contxt)
         print("QUESTION:", qtns[i])
         if (answer[0][0] != ''):
           print("ANSWER:", answer[0][0])
@@ -60,9 +49,8 @@ class Bot:
           print("nothing about it")
         print("\n")
   
-
+  # extract entities from user's query 
   def extract_entities(self, qtns):
-    
     """
     Parameters
     -----------
@@ -75,20 +63,18 @@ class Bot:
       entities extracted from questions
 
     """
-
     result = []
 
-    # proprocessing: normalize and tag
     tagged_qtns = []
+    # proprocessing
     for qtn in qtns:
       qtn = self.analyzer.normalize_and_tag(qtn)
       tagged_qtns.append(qtn);
 
-    #find all noun phrases in questions
-    ####################################
-    result = []
+    # find all noun phrase in questions
+    result = list()
     for qt in tagged_qtns:
-      ents = []
+      ents = list()
       i = 0;
       while (i < len(qt)):
         curr = ' ';
@@ -99,25 +85,22 @@ class Bot:
           if (i < len(qt)):
             while(qt[i][1] == "NN" or qt[i][1] == "IN" or qt[i][1] == "JJ"):
               curr += qt[i][0]+" "
-              print(curr)
               if (i == len(qt)-1): break;
               else: i+=1;
         if (curr != ' '): ents.append(curr)
         i += 1
       result.append(ents)
-   
     
-    # formate data
-    ##################################### 
-    formated_result = []
+    # formate data 
+    formated_result = list() 
     for a in result:
-      c = []
+      c = list()
       for b in a:
         if(self.find_entity(b.strip(' ')) != "_" and 
            self.find_entity(b.strip(' ')) != None):
           c.append(self.find_entity(b.strip(' ')))
       formated_result.append(c)
-    
+  
     return formated_result
 
 
@@ -134,15 +117,13 @@ class Bot:
       questions extracted from questions
 
     """
-    
+    aux_verbs = ["am", "is", "are", "was", "were", "will", "did", "does", "shall"]
+    result = []
+
     # remove '!' and repetitive '?'
     query = re.sub(r'[!]','',query)
     query = re.sub(r'[?](?=\?)','',query)
 
-
-    # scinario 1: if '?' is presented in query more then 1 times
-    # then split string with it
-    ########################################## 
     if (query.count('?') > 1):
       query = query.split("?")
       for i in range(len(query)):
@@ -153,23 +134,23 @@ class Bot:
         if (curr_qstn != ' '): result.append(curr_qstn);
       return result
     
-    # scinario 2: '?' is not presented in query
-    # then split string with wh-words and auxiliary verbs
     else:
+      # preprocessing   
       query = self.analyzer.normalize_and_tag(query)
       i = 0
-      while (i<len(query)-1):
-        if (query[i][1] == "WP" or query[i][1] == "WRB" or query[i][1] == "AUX"):
+      while (i<len(query)):
+        if (query[i][1] == "WDT" or query[i][1] == "WP" or query[i][1] == "WRB" or query[i][1] == "AUX"):
           curr_qstn= query[i][0]
           i += 1;
-          while (query[i][1] != "WP" and query[i][1] != "WRB" and query[i][1] != "AUX"):
+          while (query[i][1] != "WDT" and query[i][1] != "WP" and query[i][1] != "WRB" and query[i][1] != "AUX"):
             curr_qstn += " " + query[i][0];
             if (i == len(query) - 1): break;
             else: i += 1;
           result.append(curr_qstn)
+        else: i += 1
       return result
         
-
+  # requests wiki articles on extracted entities 
   def make_requests(self, ents):
     """
     Parameters
@@ -181,17 +162,15 @@ class Bot:
     --------
     result : list of custom wiki objects
       wiki pages that are related to extracted entities 
-
     """
-
-    result = []
+    result = list()
 
     for i in range(len(ents)):
-      curr = []
+      curr = list()
       for j in range(len(ents[i])):
         # search only in realm of maths
         request = [ents[i][j], ents[i][j]+"_(mathematics)", ents[i][j]+"_(geometry)"]
-        cntxt = [self.base.page(request[0]), self.base.page(request[1]), self.base.page(request[2])]
+        cntxt = [self.knw_base.page(request[0]), self.knw_base.page(request[1]), self.knw_base.page(request[2])]
         if (cntxt[1].exists()):
           curr.append(cntxt[1])
         if (cntxt[2].exists()):
@@ -201,8 +180,7 @@ class Bot:
       result.append(curr)
     return result
 
-  
- 
+
   def find_entity(self, np):
     """
     Parameters
@@ -216,16 +194,15 @@ class Bot:
       entities extracted from the given noun phrase
 
     """
-
     # scinario 1: page with name 'np' exists on Wikipadia in math section
-    if (self.base.page(np+"_(mathematics)").exists()):
+    if (self.knw_base.page(np+"_(mathematics)").exists()):
       return np
 
     # scinario 2: page with name 'np' exists on Wikipedia and contains certain words
-    elif (self.base.page(np).exists()):
-      if ("mathematics" in self.base.page(np).text or
-          "algebra" in self.base.page(np).text or
-          "calculus" in self.base.page(np).text):
+    elif (self.knw_base.page(np).exists()):
+      if ("mathematics" in self.knw_base.page(np).text or
+          "algebra" in self.knw_base.page(np).text or
+          "calculus" in self.knw_base.page(np).text):
         return np
 
     # scinario 3: noun phrase contains preposition 'of' (e.g. result of cross product) 
@@ -235,21 +212,22 @@ class Bot:
 
     # scinario 4: noun phrase np consists of 3 words (e.g. cross product commutative)    
     elif (len(np.split(' ')) == 3):
-      if (self.base.page(' '.join(np.split(" ")[1:])).exists()):
+      if (self.knw_base.page(' '.join(np.split(" ")[1:])).exists()):
         return self.find_entity(' '.join(np.split(" ")[1:]))
-      elif (self.base.page(' '.join(np.split(" ")[:2])).exists()):
+      elif (self.knw_base.page(' '.join(np.split(" ")[:2])).exists()):
         return self.find_entity(' '.join(np.split(" ")[:2]))
 
-    # scinario 5: noun phrase np consists of 2 words (e.g. lines perpendicular)
+    # scinario 4: noun phrase np consists of 2 words (e.g. lines perpendicular)
     elif (len(np.split(' ')) == 2):
-      if (self.base.page(np.split(" ")[0]).exists()):
+      if (self.knw_base.page(np.split(" ")[0]).exists()):
         return self.find_entity(np.split(" ")[0])
-      elif (self.base.page(np.split(" ")[1]).exists()):
+      elif (self.knw_base.page(np.split(" ")[1]).exists()):
         return self.find_entity(np.split(" ")[1])   
     
-    else: return("_")
+    else: 
+      return("_")
   
-  def solve_anaphora(self, qnts):
+  def solve_anaphora(self, qts):
     """
     takes questions, if it finds pronouns in some question
     then it tries to extract entity from previous question
@@ -258,12 +236,28 @@ class Bot:
     returns list of questions where all pronouns are replaced with
     certain entities
     """
-    result = []
-    for i in range(len(qnts)):
-      curr = qnts[i].split(" ")
+    result = list()
+    for i in range(len(qts)):
+      curr = qts[i].split(" ")
       for j in range(len(curr)):
-        if (curr[j] == 'it' or curr[j] == 'they' or curr[j] == 'he'):
-          ent = self.extract_entities([qnts[i-1]])
+        if (curr[j] == 'it' or curr[j] == 'they'):
+          ent = self.extract_entities([qts[i-1]])
           curr[j] = 'a ' + ent[0][0]
       result.append(" ".join(curr))
     return result
+  
+  def evaluate(self, data):
+    errors = 0
+    for k in range(len(data)):
+      query = data[k][0]
+      qtns = self.exract_questions(query)
+      qtns = self.solve_anaphora(qtns)
+      ents = self.extract_entities(qtns)
+      contxts = self.make_requests(ents)
+      for i in range(len(contxts)):
+        contxt = ' ';
+        for j in range(len(contxts[i])):
+          contxt += re.sub(r'\n|  |\{[^)]*\}|\\|\([^)]*\)|\S*\)|\S*\}', '',contxts[i][j].summary)
+        answer = self.model([contxt], [qtns[i]])
+        if (data[k][1] not in answer[0][0]): errors += 1
+    return (errors/len(data))*100
