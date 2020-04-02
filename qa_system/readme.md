@@ -23,14 +23,14 @@ begins and ends in the given context.
 ## Get started
 
 
-"""
+```
 bot = Bot()
 bot.take_query()
 
 query: what is a binary relation?
 QUESTION: what is binary relation ?
 ANSWER: a set of ordered pairs
-"""
+```
 
 # Evaluation 
 
