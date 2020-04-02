@@ -2,9 +2,7 @@
 
 ## Overview
 
-Question answering system is a systems that automatically answer questions posed by humans in a natural language. Closed-domain 
-question answering deals with questions under a specific domain. The system of this project handles domain of mathematics. 
-Context-based means that system is only able to exract an answer from some context related to the entity presented in the question.  
+Question answering system is a system that automatically answers questions posed by humans in a natural language. Closed-domain question answering deals with questions under a specific domain. The system of this project handles the domain of mathematics. Context-based means that the system is only able to extract an answer from some context related to the entity presented in the question. 
 
 ## Architecture
 
@@ -43,8 +41,8 @@ it is an error.
 
 So, accuracy of the model is <b>62%</b>
 
-Questions that concern defintions are handled quit easily, since every wikipedia page starts with definition. Whereas examples
-often are not presented, thus, the system often is not able to find an answer to questions about examples. More over, context-based
-systems are very sensitive to words, so, synonyms are problem.  
+Questions that concern definitions are handled quite easily since every Wikipedia page starts with definition. Whereas examples
+often are not presented, thus, the system often is not able to find an answer to questions about examples. Moreover, context-based
+systems are very sensitive to words, so, synonyms are a problem.  
 
 
