@@ -19,17 +19,6 @@ begins and ends in the given context.
 ![diagram](https://github.com/constantin50/machine_learning/blob/master/qa_system/diagram.png)
 
 
-# Installing
-
-Prerequisites: the following libraries should be installed: deeppavlov, tensorflow, wikipeadiaapi, nltk, spellchecker 
-
-### Google Colab
-just run qa_system.ipynb
-
-### Local host
-Install 
-
-
 
 # Evaluation 
 
@@ -46,8 +35,10 @@ A keyword to the question is a word that must be presented in answer to this que
 Keyword is the word "length" for it is an essetinal proprity of a unit vector. So, if this word is missed in the answer then
 it is an error. 
 
-# License
+So, accuracy of the model is <b>62%</b>
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+Questions that concern defintions are handled quit easily, since every wikipedia page starts with definition. Whereas examples
+often are not presented, thus, the system often is not able to find an answer to questions about examples. More over, context-based
+systems are very sensitive to words, so, synonyms are problem.  
 
 
