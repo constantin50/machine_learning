@@ -1,50 +1,50 @@
-what is an unit vector.length 1;
-what is a basis.independent, combination;
-what is a linear span.smallest subspace;
-where are vector spaces applied.engineering;
-is a tensor independent of any basis.independent;
-how can a linear map be represented.matrices;
-how can a complex number be expressed.a+bi;
-what does a complex number mean geometrically.plane;
-what is a determinant geometrically speaking.volume;
-when is a determinant positive.orientation;
-what is an inverse function.reverses;
-does the real numbers includes the rational numbers.includes;
-is the real numbers uncountable.uncountable;
-can pi be expressed as a common fraction.cannot;
-is an orthogonal matrix invertible.invertible;
-what is a example of a group.integers;
-what is a finit group.finit;
-what is a length of a point.any;
-what is a gradient.function;
-how can a gradient be interpreted.direction;
-how can a gradient be used to maximize a function.ascent;
-what is a cotangent space.smooth;
-what is a field.division;
-what is a example of a field.rational;
-is a division defined on field.defined;
-can a rational number be expressed as a fraction.fraction;
-what is a sequence.enumerated;
-what is a length of a sequence.elements;
-can a sequence be infinite.infinite;
-what are a positive numbers.greater;
-what is a complex plane.representation;
-what is a gauss plane.representation;
-what can a rotation desribe.body;
-what is a zero matrix.zero;
-when can two matrices be added.same;
-when are vectors orthogonal.0;
-what are examples of reflection.isometry;
-how are angels formed.intersection;
-what is a vertex.meet;
-what does a projective geometry study.proprities;
-what is a norm.function;
-what is a vector space in geometric sense.displacements;
-what is a metric.function;
-what does a metric tensor define.length;
-what is a positive-definite metric tensor.0;
-is a symmetric tensor invariant under a permutation.invariant;
-what is an antisymmetric tensor.sign;  
-is a result of a dot product scalar.scalar;
-what is a variable.arbitrary;
-what is a example of a function.time;
+[['what is an unit vector?','length'],
+['what is a basis?','independent'],
+['what is a linear span?','smallest'],
+['where are vector spaces applied?','engineering'],
+['is a tensor independent of any basis?','independent'],
+['how can a linear map be represented?','matrices'],
+['what is a imaginary unit?','solution'],
+['what does a complex number mean geometrically?','plane'],
+['what is a determinant geometrically speaking?','volume'],
+['when is a determinant positive?','orientation'],
+['what is pi','constant'],
+['is an orthogonal matrix invertible?','invertible'],
+['what is a real number?','continuous'],
+['what is a example of a group?','integers'],
+['what is a finit group?','finit'],
+['what is an inverse function?','reverses'],
+['what is a length of a point?','any'],
+['what is a gradient?','function'],
+['does the real numbers includes the rational numbers?','include'],
+['how can a gradient be interpreted?','direction'],
+['how can a gradient be used to maximize a function?','ascent'],
+['what is a cotangent space?','smooth'],
+['what is a field?','structure'],
+['what is a example of a ring?','integers'],
+['is a division defined on field?','defined'],
+['what is a common fraction?','numeral'],
+['what is a sequence?','enumerated'],
+['what is a length of a sequence?','elements'],
+['what are transfinite numbers?','"infinite'],
+['what are a positive numbers?','greater'],
+['what is a complex plane?','representation'],
+['what is a gauss plane?','complex'],
+['what can a rotation desribe?','body'],
+['what is a zero matrix?','zero'],
+['when can two matrices be added?','same'],
+['when are vectors orthogonal?','0'],
+['what are examples of reflection?','isometry'],
+['how are angels formed?','intersection'],
+['what is a vertex?','meet'],
+['what does a projective geometry study?','proprities'],
+['what is a norm?','function'],
+['what is a vector space in geometric sense?','displacements'],
+['what is a metric?','function'],
+['what does a metric tensor define?','length'],
+['what is a positive-definite metric tensor?','0'],
+['is a symmetric tensor invariant under a permutation?','invariant'],
+['what is an antisymmetric tensor?','sign'],  
+['is a result of a dot product scalar?','scalar'],
+['what is a variable?','arbitrary'],
+['what is a example of a function?','integers']]
