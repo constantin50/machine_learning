@@ -20,6 +20,17 @@ begins and ends in the given context.
 ![diagram](https://github.com/constantin50/machine_learning/blob/master/qa_system/diagram.png)
 
 
+## Get started
+
+
+"""
+bot = Bot()
+bot.take_query()
+
+query: what is a binary relation?
+QUESTION: what is binary relation ?
+ANSWER: a set of ordered pairs
+"""
 
 # Evaluation 
 
@@ -39,7 +50,7 @@ A keyword to the question is a word that must be presented in answer to this que
 Keyword is the word "length" for it is an essetinal proprity of a unit vector. So, if this word is missed in the answer then
 it is an error. 
 
-So, accuracy of the model is <b>62%</b>
+So, accuracy of the model is <b>66%</b>
 
 Questions that concern definitions are handled quite easily since every Wikipedia page starts with definition. Whereas examples
 often are not presented, thus, the system often is not able to find an answer to questions about examples. Moreover, context-based
