@@ -12,8 +12,11 @@ The system consists of the follwing parts:
 
 1. language model BERT traind on Stanford Question Answering Dataset. It gives predictions on where an answer to the question
 begins and ends in the given context.
+
 2. Wikipedia API.
+
 3. Analyzer. It handles text data: lemmatization, tagging and correction of spelling.
+
 4. Bot. It extracts questions and entities from user's query. 
 
 ![diagram](https://github.com/constantin50/machine_learning/blob/master/qa_system/diagram.png)
@@ -26,8 +29,11 @@ In order to evaluate accuracy of the model the following test was done. The list
 was made. Questions in list concern:
 
 1.defintion (e.g. what is an unit vector?);
+
 2.proprities (e.g. is the real numbers uncountable?);
+
 3.interpretations (e.g. what is a determinant geometrically speaking?);
+
 4.examples (e.g. what is a example of a field?).
 
 A keyword to the question is a word that must be presented in answer to this question. For example, here is the question 
