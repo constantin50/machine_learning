@@ -9,6 +9,7 @@ is a tensor independent of any basis?
 
 to each question set of POS-tags is assigned, list of tags:
 
+```
 'WH' - WH-word (what, where, how, etc.)
 'ADVB' - adverb (easily, carefully, etc.) 
 'MOD' - modal verb (can, should, must, etc.)
@@ -23,6 +24,7 @@ to each question set of POS-tags is assigned, list of tags:
 'NUMB' - number (three, 3, 3.14, etc.)
 'RP' - particle (up, down, out, etc.)
 'AUX' - auxiliry verb
+```
 
 For example:
 
