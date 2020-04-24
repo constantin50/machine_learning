@@ -1,4 +1,4 @@
-## Dataset 
+## Dataset of tagged questions 
 
 Dataset contains 450 tagged questions on different topics
 
@@ -26,8 +26,10 @@ to each question set of POS-tags is assigned, list of tags:
 
 For example:
 
+```
 "what is the function of RAM ?" -> ["WH", "AUX", "DT", "NOUN", "PREP", "NOUN"]
 "is a result of a dot product scalar ?" -> ["AUX", "DT", "NOUN", "PREP", "DT", "ADJ", "NOUN", "NOUN"]
+```
 
 Note that these tags were designed for QA systems to extract entities from questions. That is why they are not so informative
 (and sometimes wrong) from linguistics' point of view.
