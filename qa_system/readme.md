@@ -19,6 +19,10 @@ begins and ends in the given context.
 
 ![diagram](https://github.com/constantin50/machine_learning/blob/master/qa_system/diagram.png)
 
+## Part Of Speech tagging
+
+The core of Analyzer is Convolutional neural network model that implements POS tagging of questions. This model was trained on dataset that contains 450 tagged questions.   
+
 
 ## Get started
 
