@@ -1,13 +1,13 @@
-## Dataset of tagged questions 
+## Dataset of Tagged Questions 
 
-Dataset contains 450 tagged questions on different topics
+The dataset contains 450 tagged questions on different topics
 
 ```
 how do doctors diagnose bone cancer?
 is a tensor independent of any basis?
 ```
 
-to each question set of POS-tags is assigned, list of tags:
+To each question a set of POS-tags is associated, the list of tags:
 
 ```
 'WH' - WH-word (what, where, how, etc.)
