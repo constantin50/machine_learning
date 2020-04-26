@@ -1,6 +1,11 @@
+## Part of Speech Tagging model
+
+Part-of-speech tagging, also called word-category disambiguation, is the process of marking up a word in a text (corpus) as corresponding to a particular part of speech. The model is a convolutional neural network trained to predict POS tags of sentence.
+In this case I train it with corpus of tagged questions written in English to analyze structure of a question for entity extraction purposes. 
+
 ## Dataset of Tagged Questions 
 
-The dataset contains 772 tagged questions on different topics. Originally, the datasrt was created for training pos tagging 
+The dataset contains 959 tagged questions on different topics. Originally, the datasrt was created for training pos tagging 
 model to analyze queries in QA systems.
 
 ```
