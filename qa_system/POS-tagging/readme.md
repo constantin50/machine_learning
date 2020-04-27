@@ -1,12 +1,12 @@
-# Part of Speech Tagging model
+## Part of Speech Tagging model
 
 Part-of-speech tagging, also called word-category disambiguation, is the process of marking up a word in a text (corpus) as corresponding to a particular part of speech. The model is a convolutional neural network trained to predict POS tags of sentence.
 In this case I train it with corpus of tagged questions written in English to analyze structure of a question for entity extraction purposes. 
 
-### Get Started
+#### Get Started
 
 
-### 1) using default model
+#### 1) using default model
 
 ```
 from pos_tagging import train_model, POSTagger
@@ -19,9 +19,9 @@ tagger(["what does a tensor describe","how can i calculate a vector product"])
  ['WH', 'MOD', 'PRON', 'VERB', 'DT', 'NOUN', 'NOUN']]
 ```
 
-### 2) customization 
+#### 2) customization 
 
-you can edit model or train it on your own model in colab, check pos_tagging.ipynb
+you can edit model or train it on your own dataset in colab - check pos_tagging.ipynb
 
 ```
 url = 'your dataset'
@@ -37,7 +37,7 @@ Note, that dataset should be in json format that can be converted into dict type
  ```
 
 
-# Dataset of Tagged Questions 
+## Dataset of Tagged Questions 
 
 The dataset contains 959 tagged questions on different topics. Originally, the datasrt was created for training pos tagging 
 model to analyze queries in QA systems.
@@ -77,7 +77,7 @@ Note that these tags were designed for QA systems to extract entities from quest
 (and sometimes wrong) from linguistics' point of view.
 
 
-### Get started 
+#### Get started 
 
 ```
 url = 'https://raw.githubusercontent.com/constantin50/machine_learning/master/qa_system/tagger/train_data.json'
