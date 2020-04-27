@@ -3,6 +3,44 @@
 Part-of-speech tagging, also called word-category disambiguation, is the process of marking up a word in a text (corpus) as corresponding to a particular part of speech. The model is a convolutional neural network trained to predict POS tags of sentence.
 In this case I train it with corpus of tagged questions written in English to analyze structure of a question for entity extraction purposes. 
 
+## Get Started
+
+Google Colab: 
+
+1) training the model on your own data:
+
+```
+url = 'your dataset'
+data = json.loads(requests.get(url).text)
+```
+
+Note, that dataset should be in json format that can be converted into dict type:
+
+```
+{'sentence': 'how many years ago did the ship Titanic sink',
+ 'tags': ['WH', 'ADJ', 'NOUN', 'ADV', 'AUX', 'DT', 'NOUN', 'NOUN', 'VERB']}
+ ```
+ 
+ 
+ 2) loading the model trained on the qustions dataset
+
+```
+# insert your own path
+model.load_state_dict(torch.load('./pos_model.pth'))
+tagger = POSTagger(model, char_vocab, UNIQUE_TAGS, MAX_SENT_LEN, MAX_ORIG_TOKEN_LEN)
+```
+
+3) prediction
+
+```
+tagger = POSTagger(model, char_vocab, UNIQUE_TAGS, 40, 20)
+tagger(['what is a vector product', 'is a real numbers a ring'])
+
+[['WH', 'AUX', 'DT', 'NOUN', 'NOUN'],
+ ['AUX', 'DT', 'ADJ', 'NOUN', 'DT', 'NOUN']]
+```
+
+
 ## Dataset of Tagged Questions 
 
 The dataset contains 959 tagged questions on different topics. Originally, the datasrt was created for training pos tagging 
