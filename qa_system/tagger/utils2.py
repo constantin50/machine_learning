@@ -1,3 +1,5 @@
+from torch.utils.data import DataLoader
+
 def copy_data_to_device(data, device):
     if torch.is_tensor(data):
         return data.to(device)
