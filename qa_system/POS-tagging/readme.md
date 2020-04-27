@@ -9,6 +9,8 @@ In this case I train it with corpus of tagged questions written in English to an
 #### 1) using default model
 
 ```
+!git clone https://github.com/constantin50/machine_learning.git
+import sys; sys.path.append('./machine_learning')
 from pos_tagging import train_model, POSTagger
 
 model = train_model() # train on default questions dataset
