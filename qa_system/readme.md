@@ -17,7 +17,7 @@ begins and ends in the given context.
 
 4. Bot. It extracts questions and entities from user's query. 
 
-![diagram](https://github.com/constantin50/machine_learning/blob/master/qa_system/diagram.png)
+![diagram](https://sun9-50.userapi.com/c858224/v858224726/1e8264/QGFUBoJTP8Y.jpg)
 
 ### Part Of Speech tagging
 
