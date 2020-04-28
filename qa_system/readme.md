@@ -1,10 +1,10 @@
-# Context-based Closed Domain Q&A System
+## Context-based Closed Domain Q&A System
 
-## Overview
+### Overview
 
 Question answering system is a system that automatically answers questions posed by humans in a natural language. Closed-domain question answering deals with questions under a specific domain. The system of this project handles the domain of mathematics. Context-based means that the system is only able to extract an answer from some context related to the entity presented in the question. 
 
-## Architecture
+### Architecture
 
 The system consists of the follwing parts: 
 
@@ -19,12 +19,12 @@ begins and ends in the given context.
 
 ![diagram](https://github.com/constantin50/machine_learning/blob/master/qa_system/diagram.png)
 
-## Part Of Speech tagging
+### Part Of Speech tagging
 
 The core of Analyzer is a convolutional neural network model that implements POS tagging of questions. This model was trained on dataset that contains 989 tagged questions.   
 
 
-## Get started
+### Get started
 
 
 ```
@@ -36,7 +36,7 @@ QUESTION: what is binary relation ?
 ANSWER: a set of ordered pairs
 ```
 
-# Evaluation 
+### Evaluation 
 
 In order to evaluate accuracy of the model the following test was done. The list of 50 pairs [question,keyword] 
 was made. Questions in list concern:
