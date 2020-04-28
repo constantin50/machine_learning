@@ -21,7 +21,7 @@ begins and ends in the given context.
 
 ## Part Of Speech tagging
 
-The core of Analyzer is Convolutional neural network model that implements POS tagging of questions. This model was trained on dataset that contains 450 tagged questions.   
+The core of Analyzer is a convolutional neural network model that implements POS tagging of questions. This model was trained on dataset that contains 989 tagged questions.   
 
 
 ## Get started
@@ -54,7 +54,13 @@ A keyword to the question is a word that must be presented in answer to this que
 Keyword is the word "length" for it is an essetinal proprity of a unit vector. So, if this word is missed in the answer then
 it is an error. 
 
-So, accuracy of the model is <b>66%</b>
+So, accuracy of the model:
+
+```
+bot.evaluate(test)
+
+64.0
+```
 
 Questions that concern definitions are handled quite easily since every Wikipedia page starts with definition. Whereas examples
 often are not presented, thus, the system often is not able to find an answer to questions about examples. Moreover, context-based
