@@ -17,3 +17,5 @@ Just run .ipynb file
 ## Dataset 
 
 Dataset contains CCTV footage images(as indoor as outdoor), 552 of them with humans and 462 without them.
+
+![image](https://github.com/constantin50/machine_learning/blob/master/human_detection/thumbnail.png)
