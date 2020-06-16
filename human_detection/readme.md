@@ -5,7 +5,7 @@ The basis of a model is a neural network with LeNet-based architecture. Model is
 
 ## Get started
 
-### Google Colab
+### Google Colab (GPU)
 
 Just run human_detection.ipynb file
 
@@ -21,6 +21,22 @@ result = predict(model, PATH2)
 
 print(result)
 ```
+
+### GUI via Python idle (CPU)
+
+```
+import torch
+import tkinter
+import LeNet
+import human_detection
+
+PATH1 = 'C:\projects\human detection\model_32' # path to model_32 (can be changed)
+model = LeNet.LeNet() # define model from LeNet 
+model.load_state_dict(torch.load(path1, map_location=torch.device('cpu'))) # load trained weights from model_32
+<All keys matched successfully>
+model.eval() # switch model into prediction mode
+...
+human_detection.App(tkinter.Tk(), delay=15, window_title="human_detection", model=model)
 
 ### Load pytorch model
 
