@@ -1,7 +1,7 @@
 ## Human Detection Model
 
 This model gives prediction that there is a human on a picture, it can be used to process video stream from CCTV cameras.
-The basis of a model is a neural network with LeNet-based architecture. Model is avaible as colab notebook, as pytorch model saved with state_dict() method and as GUI application.
+The basis of a model is a neural network with LeNet-based architecture. The model was trained on the dataset of 64x64 images. Model is avaible as colab notebook, as pytorch model saved with state_dict() method and as GUI application.
 
 ## Validation accuracy
 
@@ -50,7 +50,7 @@ human_detection.App(tkinter.Tk(), delay=15, window_title="human_detection", mode
 
 ## Dataset 
 
-Dataset contains CCTV footage images(as indoor as outdoor), 684 of them with humans and 470 without them.
+Dataset contains CCTV footage 256x256 images(as indoor as outdoor), 684 of them with humans and 470 without them.
 
 You can download it from [Kaggle](https://www.kaggle.com/constantinwerner/human-detection-dataset)
 
