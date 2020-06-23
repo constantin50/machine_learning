@@ -5,8 +5,9 @@ The basis of a model is a neural network with LeNet-based architecture. Model is
 
 ## Validation accuracy
 
-Mean accuracy is 0.79%
+Mean validation accuracy is 0.79%
 
+![validation accuracy](https://github.com/constantin50/machine_learning/blob/master/human_detection/eyE35WNwJzw.jpg)
 
 
 ## Get started
