@@ -44,9 +44,7 @@ model.load_state_dict(torch.load(path1, map_location=torch.device('cpu'))) # loa
 model.eval() # switch model into prediction mode
 ...
 human_detection.App(tkinter.Tk(), delay=15, window_title="human_detection", model=model)
-
-### Load pytorch model
-
+```
 
 
 
