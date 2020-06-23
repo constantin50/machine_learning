@@ -52,6 +52,8 @@ human_detection.App(tkinter.Tk(), delay=15, window_title="human_detection", mode
 
 ## Dataset 
 
-Dataset contains CCTV footage images(as indoor as outdoor), 552 of them with humans and 462 without them. Images 
+Dataset contains CCTV footage images(as indoor as outdoor), 684 of them with humans and 470 without them.
+
+You can download it from [Kaggle](https://www.kaggle.com/constantinwerner/human-detection-dataset)
 
 ![image](https://github.com/constantin50/machine_learning/blob/master/human_detection/thumbnail.png)
