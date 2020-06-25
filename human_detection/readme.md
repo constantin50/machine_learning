@@ -43,10 +43,10 @@ model.load_state_dict(torch.load(PATH1, map_location=torch.device('cpu'))) # loa
 <All keys matched successfully>
 model.eval() # switch model into prediction mode
 ...
-HD.App(tkinter.Tk(), delay=15, window_title="human_detection", model=model, plot=True) # if you do not want to display plot switch the parameter to 'False'
+HD.App(tkinter.Tk(), delay=15, window_title="human_detection", model=model, plot=True) # if you do not want to display real-time probability plot switch the parameter to 'False'
 ```
 
-
+![how it looks](https://github.com/constantin50/machine_learning/blob/master/human_detection/demo.gif)
 
 ## Dataset 
 
