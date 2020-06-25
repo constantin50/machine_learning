@@ -48,6 +48,8 @@ HD.App(tkinter.Tk(), delay=15, window_title="human_detection", model=model, plot
 
 ![how it looks](https://github.com/constantin50/machine_learning/blob/master/human_detection/demo.gif)
 
+in a Python window you see probability of that a current frame contains a human, a plot window displays history of probabilities.  
+
 ## Dataset 
 
 Dataset contains CCTV footage 256x256 images(as indoor as outdoor), 684 of them with humans and 470 without them.
