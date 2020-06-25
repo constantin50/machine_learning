@@ -37,13 +37,13 @@ import tkinter
 import LeNet
 import human_detection
 
-PATH1 = 'C:\projects\human detection\model_32' # path to model_32 (can be changed)
+PATH1 = 'C:\projects\human detection\model_64' # path to model_64 (can be changed)
 model = LeNet.LeNet() # define model from LeNet 
-model.load_state_dict(torch.load(path1, map_location=torch.device('cpu'))) # load trained weights from model_32
+model.load_state_dict(torch.load(PATH1, map_location=torch.device('cpu'))) # load trained weights from model_64
 <All keys matched successfully>
 model.eval() # switch model into prediction mode
 ...
-human_detection.App(tkinter.Tk(), delay=15, window_title="human_detection", model=model)
+HD.App(tkinter.Tk(), delay=15, window_title="human_detection", model=model, plot=True) # if you do not want to display plot switch the parameter to 'False'
 ```
 
 
