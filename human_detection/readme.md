@@ -17,7 +17,7 @@ Mean validation accuracy is 0.79%
 Just run human_detection.ipynb file
 
 ```
-PATH1 # path to model_32
+PATH1 # path to model_64
 PATH2 # path to image (png/jpg/bmp) 
 
 model = LeNet()
@@ -35,7 +35,7 @@ print(result)
 import torch
 import tkinter
 import LeNet
-import human_detection
+import Human_Detection as HD
 
 PATH1 = 'C:\projects\human detection\model_64' # path to model_64 (can be changed)
 model = LeNet.LeNet() # define model from LeNet 
