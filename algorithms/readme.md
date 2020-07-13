@@ -11,3 +11,7 @@ Using euclidian distance we can take derivative of (*) with respect to a center 
 
 
 ![formula](http://latex2png.com/pngs/597be5bb3827ed67297e9cd141eeedff.png)
+
+Then use these formulas until convergence
+
+![anim](https://github.com/constantin50/machine_learning/blob/master/algorithms/k-means-anim.gif)
