@@ -1,3 +1,7 @@
+<h2>K-means</h2>
+
+The task is to make distribution of some objects over clusters. Each kth cluster is characterized with its center c_k
+
 K-means optimizes in-cluster distance of objects
 
 ![formula](http://latex2png.com/pngs/4ab36fa1c925a3054fe37c2042648ec5.png) (*)
