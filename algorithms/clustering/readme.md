@@ -18,4 +18,4 @@ Using euclidian distance we can take derivative of (*) with respect to a center 
 
 Then use these formulas until convergence
 
-![anim](https://github.com/constantin50/machine_learning/blob/master/algorithms/k-means-anim.gif)
+![anim](https://github.com/constantin50/machine_learning/blob/master/algorithms/clustering/k-means-anim.gif)
