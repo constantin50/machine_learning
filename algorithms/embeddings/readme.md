@@ -3,8 +3,17 @@ in natural language processing where words or phrases from the vocabulary are ma
 
 There several approches to it
 
-## One Hot Encoding 
+### Cosine similarity
 
-## TF-IDF
+### One Hot Encoding 
 
-## Word2Vec
+The One Hot Encoding is the simplest approach. Each word takes a vector with size of n, where n is a number 
+of unique words. This vector is fill with zeroes but in kth position there is '1' and k is a number of this word
+in vocabulary (which is just a map from words to numbers). The sum of such vectors for each word in document represents
+a vector for this document.
+
+![image](https://sun4-17.userapi.com/c857728/v857728972/21419c/N4Wp8caAAjc.jpg)
+
+### TF-IDF
+
+### Word2Vec
