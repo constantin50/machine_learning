@@ -12,7 +12,7 @@ of unique words. This vector is fill with zeroes but in kth position there is '1
 in vocabulary (which is just a map from words to numbers). The sum of such vectors for each word in document represents
 a vector for this document.
 
-![image](https://sun4-17.userapi.com/c857728/v857728972/21419c/N4Wp8caAAjc.jpg){:height="300px" width="300px"}
+![image](https://sun4-17.userapi.com/c857728/v857728972/21419c/N4Wp8caAAjc.jpg | 350x350)
 
 ### TF-IDF
 
