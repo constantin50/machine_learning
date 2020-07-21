@@ -16,4 +16,18 @@ a vector for this document.
 
 ### TF-IDF
 
+TFIDF (short for term frequency–inverse document frequency) is a statistic that reflects how important a word is to a document in a collection.
+
+Firstly, we count how many times a word occurs in a document and devide it by a number of occuring of this word in whole collection
+
+![form1](https://sun9-28.userapi.com/_dFz76KVkloQNW80rxE_b6I61CEGtMshCJmznw/flDfkiUcaXs.jpg)
+
+Secondly, we count how many documents we have and divide it by a number of document where the word occurs.
+
+![form2](https://sun9-70.userapi.com/82kJ_eHhdLmxxDXz6gqIGS4BMPodlMhdDSiBsw/hlTS5ogIldk.jpg)
+
+Then, multiply it.
+
+![form3](https://sun9-74.userapi.com/4rEemv0n1mscw-Ed9nqD6qHU2LVSXIkgcNppdw/pz2sIFVHBfQ.jpg)
+
 ### Word2Vec
